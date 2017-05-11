@@ -1,0 +1,45 @@
+<!--<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+
+<ion-content padding>
+     <form [formGroup]="formularioLogin">
+
+        <ion-list>
+
+         <ion-item>
+         </ion-item>
+         <ion-item>
+         </ion-item>
+         <ion-item>
+         </ion-item>
+         <ion-item>
+           <ion-label color="primary" floating>Correo</ion-label>
+           <ion-input type="email" formControlName="txtCorreo" clearInput></ion-input>
+         </ion-item>
+
+         <ion-item>
+           <ion-label color="primary" floating>Contraseña</ion-label>
+           <ion-input type="password" formControlName="txtClave" clearInput></ion-input>
+         </ion-item>
+          
+        </ion-list>
+
+        <button type="submit" ion-button  block [disabled]="!formularioLogin.valid"  (click)="iniciarSesion()">
+           Iniciar sesion
+        </button>
+
+        <button type="submit" ion-button  block [disabled]="!formularioLogin.valid" (click)="registrarUsuario()">
+           Registrase
+        </button>
+
+    </form>
+</ion-content>
+
+

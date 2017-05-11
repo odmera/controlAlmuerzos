@@ -1,0 +1,26 @@
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  <ion-list no-lines>
+   <ion-item-sliding *ngFor="let item of personaList">
+
+     <ion-item>
+        <ion-avatar item-left >
+          <img src="assets/imagenes/foto.jpg">
+        </ion-avatar>
+        <h2>{{item.persona.nombre}} {{item.persona.apellido}}</h2>
+        <p>{{item.persona.correo}}</p>
+        <p>Saldo:${{item.saldo}}</p>
+     </ion-item>
+     <ion-item-options>
+        <button primary (click)="verCobrosAbonosPersona(item)">
+         <ion-icon name="logo-usd"></ion-icon>
+         Cobros y abonos
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

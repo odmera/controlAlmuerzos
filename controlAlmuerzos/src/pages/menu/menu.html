@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Control almuerzos
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="cerrarSesion()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-tabs selectedIndex="0">
+    <ion-tab tabIcon="people" tabTitle="Personas" [root]="tab1Root"></ion-tab>
+    <ion-tab tabIcon="list" tabTitle="Movimientos" [root]="tab2Root"></ion-tab>
+    <ion-tab tabIcon="logo-usd" tabTitle="Saldos" tabBadgeStyle="danger" [root]="tab3Root"></ion-tab>
+
+    <ion-tab tabIcon="people" tabTitle="prueba" [root]="tab4Root"></ion-tab>
+ </ion-tabs>
+ </ion-content>

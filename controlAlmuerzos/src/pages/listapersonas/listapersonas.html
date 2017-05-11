@@ -1,0 +1,37 @@
+
+<ion-content>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+ 
+  <ion-list no-lines>
+   <ion-item-sliding *ngFor="let item of personaList">
+
+     <ion-item>
+        <ion-avatar item-left >
+          <img src="assets/imagenes/foto.jpg">
+        </ion-avatar>
+        <h2>{{item.nombre}} {{item.apellido}}</h2>
+        <p>{{item.correo}}</p>
+        <p>{{item.telefono}}</p>
+     </ion-item>
+     <ion-item-options>
+        <button primary (click)="abonar( item )">
+         <ion-icon name="logo-usd"></ion-icon>
+         Movimientos
+        </button>
+
+        <button primary (click)="eliminar(item)">
+         <ion-icon name="md-trash"></ion-icon>
+         Eliminar
+        </button>
+
+         <button primary (click)="showOptions(item.key,item)">
+         <ion-icon name="md-trash"></ion-icon>
+          prueba
+        </button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,56 @@
+
+<ion-content padding>
+
+	    <!--<ion-label mode="md" color="primary">Crear persona</ion-label>!-->
+
+	
+		<img class="center" src="data:image/jpeg;base64,{{ cameraUrl }}" *ngIf="fotoSelect"/>
+		<img class="center" src="data:image/jpeg;base64,{{ cameraData }}" *ngIf="fotoCargada"/>
+	    <img class="center" width="200" height="200" 
+	       src="assets/imagenes/foto.jpg" *ngIf="imagenPordefecto"/>
+
+        <div class="center">
+	    <button  class="center" ion-button icon-left small (click)="openCamera()">
+		  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+		  Camara
+		</button>
+
+		<button class="center" ion-button icon-left small (click)="selectFromGallery()">
+		   <ion-icon ios="ios-image" md="md-image"></ion-icon>
+		   Galeria
+		</button>
+		</div>
+        
+
+        <form [formGroup]="formularioPersona" (ngSubmit)="guardar()">
+
+	        <ion-list>
+			   <ion-item>
+			     <ion-label color="primary" floating>Nombres</ion-label>
+			     <ion-input type="text" formControlName="txtNombre" clearInput></ion-input>
+			   </ion-item>
+
+			   <ion-item>
+			     <ion-label color="primary" floating>Apellidos</ion-label>
+			     <ion-input type="text" formControlName="txtApellido" clearInput></ion-input>
+			   </ion-item>
+
+			   <ion-item>
+			     <ion-label color="primary" floating>Telefono</ion-label>
+			     <ion-input type="tel"  formControlName="txtTelefono" clearInput></ion-input>
+			   </ion-item>
+
+			   <ion-item>
+			     <ion-label color="primary" floating>Correo</ion-label>
+			     <ion-input type="email" formControlName="txtCorreo" clearInput></ion-input>
+			   </ion-item>
+	        </ion-list>
+
+	        <button type="submit" ion-button round full [disabled]="!formularioPersona.valid">
+	        <ion-icon ios="ios-person-add" md="md-person-add"></ion-icon>
+	        Guardar
+	        </button>
+
+	    </form>
+</ion-content>
+
