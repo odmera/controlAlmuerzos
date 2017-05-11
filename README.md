@@ -1,4 +1,4 @@
-# controlAlmuerzos
+# Control almuerzos
 Control y gestión de almuerzos diarios
 
 app movil para gestion de almuerzos diarios desarrollada con ionic2,
